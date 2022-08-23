@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f1f1f1;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1 { 
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #323232;
+    margin: 50px 0 25px 0;
+    display: block;
+}
+
+#employee-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 0 0 100%;
+    margin-right: 0%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card img {
+    border-radius: 100%;
+    display: block;
+}
+
+@media screen and (min-width: 1000px){
+    .card {
+        flex: 0 0 31%;
+        margin-right: 2%;
+    }
+}
