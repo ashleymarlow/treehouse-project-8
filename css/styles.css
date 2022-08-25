@@ -87,12 +87,15 @@ h1 {
     position: relative; 
     background-color: white;
     padding: 20px; 
-    margin: auto; 
-    width: 75%;  
+    margin: auto;  
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
 }
 
 .close-btn {

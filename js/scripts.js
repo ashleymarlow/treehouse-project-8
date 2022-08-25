@@ -1,7 +1,8 @@
 const employeeContainer = document.getElementById('employee-container');
 fetch('https://randomuser.me/api/?results=12&nat=us')
     .then(response => response.json())
-    .then(data => generateCards(data.results));
+    .then(data => generateCards(data.results))
+    .then(data => generateModal());
 
 function generateCards(data) {
     const cards = data.map(item => `
@@ -20,17 +21,31 @@ function generateCards(data) {
     employeeContainer.innerHTML = cards;
 }
 
-let modalBtn = document.getElementById("modal-btn");
-let modal = document.querySelector(".modal");
-let closeBtn = document.querySelector(".close-btn");
-modalBtn.onclick = function(){
-  modal.style.display = "block";
+function generateModal() {
+    let cards = document.getElementsByClassName("card");
+    let modal = document.querySelector(".modal");
+    let closeBtn = document.querySelector(".close-btn");
+
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].onclick = function(){
+            populateModal();
+            modal.style.display = "block";
+        }
+    }
+
+    closeBtn.onclick = function(){
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(e){
+      if(e.target == modal){
+        modal.style.display = "none";
+      }
+    }
 }
-closeBtn.onclick = function(){
-  modal.style.display = "none";
+
+function populateModal() {
+    console.log('populate modal');
 }
-window.onclick = function(e){
-  if(e.target == modal){
-    modal.style.display = "none";
-  }
-}
+
+
