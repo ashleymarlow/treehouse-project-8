@@ -7,7 +7,7 @@ fetch('https://randomuser.me/api/?results=12&nat=us')
 function generateCards(data) {
     const cards = data.map(item => `
     <div class='card'>
-        <img src="${item.picture.large}">
+        <img src="${item.picture.large}" alt="employee image">
         <div class="employee-info" 
             data-phone-number="${item.phone}" 
             data-address="${item.location.street.number} ${item.location.street.name} ${item.location.city}, ${item.location.state} ${item.location.postcode}" 
